@@ -17,7 +17,7 @@ if ($conn->connect_error) {
 }
 else{
   $db_connection_status = 'Conectado no banco de dados';
-  $db_version = $conn->server_info
+  $db_version = $conn->server_info;
 }
 
 $conn->close();
