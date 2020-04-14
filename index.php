@@ -23,7 +23,6 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 else{
-  $db_connection_status = 'Conectado no banco de dados';
   $db_version = $conn->server_info;
 }
 
@@ -69,7 +68,7 @@ header {
 nav {
   float: left;
   width: 30%;
-  height: 300px; /* only for demonstration, should be removed */
+
   background: #ccc;
   padding: 20px;
 }
@@ -85,7 +84,7 @@ article {
   padding: 20px;
   width: 70%;
   background-color: White;
-  height: 300px; /* only for demonstration, should be removed */
+
 }
 
 /* Clear floats after the columns */
@@ -120,6 +119,13 @@ footer {
             <h2>Simple PHP APP</h2>
         </header>
         <section>
+          <nav>
+            <ul>
+              <li><a href="#">A</a></li>
+              <li><a href="#">B</a></li>
+              <li><a href="#">C</a></li>
+            </ul>
+          </nav>
             <article>
                 <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -135,7 +141,6 @@ footer {
         </section>
         <footer>
             <?php print "<p> Served by container ID: ".$hostname. "</p>";?>
-            <?php print "<p> Database status: ".$db_connection_status. "</p>";?>
             <?php print "<p> Database Info: ".$db_version. "</p>";?>
         </footer>
         
