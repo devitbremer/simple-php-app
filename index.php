@@ -20,14 +20,6 @@ else{
 
 $conn->close();
 
-#########Redis##########
-session_start();
-$count = isset($_SESSION['count']) ? $_SESSION['count'] : 1;
-
-echo $count;
-
-$_SESSION['count'] = ++$count;
-
 ?>
 
 
@@ -142,7 +134,7 @@ footer {
         <footer>
             <?php print "<p> Served by container ID: ".$hostname. "</p>";?>
             <?php print "<p> Database Info: ".$db_version. "</p>";?>
-            <?php print "<p> Total Redis sessions: ".$count. "</p>";?>
+            <?php print "<p> Redis session is availabe</p>";?>
         </footer>
         
         <script src="" async defer></script>
