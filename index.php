@@ -125,6 +125,7 @@ footer {
         </section>
         <footer>
             <?php print "<p> Served by container ID: ".$hostname. "</p>";?>
+            <?php print "<p> Database status: ".$db_connection_status. "</p>";?>
         </footer>
         
         <script src="" async defer></script>
