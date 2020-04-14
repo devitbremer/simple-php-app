@@ -8,16 +8,19 @@ $hostname = gethostname();
 $dbhost = 'mariadb:3036';
 $dbuser = 'user8S5';
 $dbpass = 'BaXVlJRLcQvMpOp4';
-$conn = mysql_connect($dbhost, $dbuser, $dbpass);
+$dbname = 'sampledb';
 
-if(! $conn ) {
-  die('Could not connect: ' . mysql_error());
+$conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
 }
 else{
   $db_connection_status = 'Conectado no banco de dados';
+  $db_version = $conn->server_info
 }
 
-mysql_close($conn);
+$conn->close();
 
 ?>
 
@@ -126,6 +129,7 @@ footer {
         <footer>
             <?php print "<p> Served by container ID: ".$hostname. "</p>";?>
             <?php print "<p> Database status: ".$db_connection_status. "</p>";?>
+            <?php print "<p> Database Info: ".$db_version. "</p>";?>
         </footer>
         
         <script src="" async defer></script>
