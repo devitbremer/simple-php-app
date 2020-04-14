@@ -59,7 +59,7 @@ header {
 /* Create two columns/boxes that floats next to each other */
 nav {
   float: left;
-  width: 30%;
+  width: 10%;
   height: 300px; /* only for demonstration, should be removed */
   background: #ccc;
   padding: 20px;
@@ -74,7 +74,7 @@ nav ul {
 article {
   float: left;
   padding: 20px;
-  width: 70%;
+  width: 80%;
   background-color: White;
   height: 300px; /* only for demonstration, should be removed */
 }
