@@ -1,7 +1,7 @@
 <?php
 
 $bg_color = 'DodgerBlue';
-$hostname = gethostbyname();
+$hostname = gethostname();
 
 #<?php echo($bg_color);?>
 
@@ -29,7 +29,7 @@ body {
 
 /* Style the header */
 header {
-  background-color: DodgerBlue;
+  background-color: <?php echo($bg_color);?>;
   padding: 30px;
   text-align: center;
   font-size: 35px;
@@ -68,7 +68,7 @@ section:after {
 
 /* Style the footer */
 footer {
-  background-color: DodgerBlue;
+  background-color: <?php echo($bg_color);?>;
   padding: 10px;
   text-align: center;
   color: white;
@@ -105,7 +105,7 @@ footer {
             </article>
         </section>
         <footer>
-            <?php print "<p> Content Served by container id: ".$hostname. "</p>";?>
+            <?php print "<p> Served by container ID: ".$hostname. "</p>";?>
         </footer>
         
         <script src="" async defer></script>
