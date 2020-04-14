@@ -5,7 +5,7 @@ $hostname = gethostname();
 
 ###############################
 
-$dbhost = 'mariadb:3036';
+$dbhost = 'mariadb:3306';
 $dbuser = 'user8S5';
 $dbpass = 'BaXVlJRLcQvMpOp4';
 $dbname = 'sampledb';
