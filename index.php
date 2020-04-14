@@ -10,6 +10,13 @@ $dbuser = 'user8S5';
 $dbpass = 'BaXVlJRLcQvMpOp4';
 $dbname = 'sampledb';
 
+
+$fp = fsockopen("mariadb", 3306, $errno, $errstr, 30);
+//if the socket failed it's offline...
+if (!$fp) {
+    echo "$errstr ($errno)<br />\n";
+}
+
 $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 
 if ($conn->connect_error) {
