@@ -3,7 +3,28 @@
 $bg_color = 'DodgerBlue';
 $hostname = gethostname();
 
+###############################
+
+$dbhost = 'mariadb:3036';
+$dbuser = 'user8S5';
+$dbpass = 'BaXVlJRLcQvMpOp4';
+$conn = mysql_connect($dbhost, $dbuser, $dbpass);
+
+if(! $conn ) {
+  die('Could not connect: ' . mysql_error());
+}
+else{
+  $db_connection_status = 'Conectado no banco de dados';
+}
+
+mysql_close($conn);
+
 ?>
+
+
+
+
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
