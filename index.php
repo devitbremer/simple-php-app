@@ -3,20 +3,12 @@
 $bg_color = 'DodgerBlue';
 $hostname = gethostname();
 
-###############################
+############MYSQL###################
 
 $dbhost = 'mariadb:3306';
 $dbuser = 'user8S5';
 $dbpass = 'BaXVlJRLcQvMpOp4';
 $dbname = 'sampledb';
-
-
-$fp = fsockopen("mariadb", 3306, $errno, $errstr, 30);
-//if the socket failed it's offline...
-if (!$fp) {
-    echo "$errstr ($errno)<br />\n";
-}
-
 $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 
 if ($conn->connect_error) {
@@ -27,6 +19,14 @@ else{
 }
 
 $conn->close();
+
+#########Redis##########
+session_start();
+$count = isset($_SESSION['count']) ? $_SESSION['count'] : 1;
+
+echo $count;
+
+$_SESSION['count'] = ++$count;
 
 ?>
 
@@ -68,7 +68,7 @@ header {
 nav {
   float: left;
   width: 30%;
-
+  height: 300px; /* only for demonstration, should be removed */
   background: #ccc;
   padding: 20px;
 }
@@ -84,7 +84,7 @@ article {
   padding: 20px;
   width: 70%;
   background-color: White;
-
+  height: 300px; /* only for demonstration, should be removed */
 }
 
 /* Clear floats after the columns */
@@ -142,6 +142,7 @@ footer {
         <footer>
             <?php print "<p> Served by container ID: ".$hostname. "</p>";?>
             <?php print "<p> Database Info: ".$db_version. "</p>";?>
+            <?php print "<p> Total Redis sessions: ".$count. "</p>";?>
         </footer>
         
         <script src="" async defer></script>
