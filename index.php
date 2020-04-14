@@ -74,7 +74,7 @@ nav ul {
 article {
   float: left;
   padding: 20px;
-  width: 80%;
+  width: 90%;
   background-color: White;
   height: 300px; /* only for demonstration, should be removed */
 }
