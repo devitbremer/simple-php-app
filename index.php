@@ -6,9 +6,9 @@ $hostname = gethostname();
 ############MYSQL###################
 
 $dbhost = 'mariadb:3306';
-$dbuser = getenv(DB_USER);
-$dbpass = getenv(DB_PASSWORD);
-$dbname = getenv(DB_NAME);
+$dbuser = getenv("DB_USER");
+$dbpass = getenv("DB_PASSWORD");
+$dbname = getenv("DB_NAME");
 $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 
 if ($conn->connect_error) {
