@@ -1,7 +1,2 @@
-FROM nginx:alpine
+FROM nginxinc/nginx-unprivileged
 COPY . /usr/share/nginx/html
-EXPOSE 8080
-
-STOPSIGNAL SIGTERM
-
-CMD ["nginx", "-g", "daemon off;"]
